@@ -1,0 +1,22 @@
+function curry(fn) {
+  const arity = fn.length;
+  console.log(arity);
+  
+  return function f1(...args) {
+    console.log(args)
+    if(args.length >= arity) {
+      return fn(...args)
+    } else {
+      console.log('Need more arguments')
+      
+      return function f2(...moreArgs) {
+        const newArgs = [...args, ...moreArgs]
+        return f1(...newArgs)
+      }
+    }
+  }
+}
+
+const curriedProduct = curry((a,b,c) => a * b * c)
+const tempProduct = curriedProduct(2)(2,3)(5)
+console.log(tempProduct)

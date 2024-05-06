@@ -1,0 +1,8 @@
+function removeDuplicates(arr){
+  return arr.filter((val,index) => arr.indexOf(val) === index)
+  // return Array.from(new Set(arr))
+}
+
+var names = ["Kathir", "kannan", "kumaar","Kathir", "Karthi", "kannan"]
+
+console.log(removeDuplicates(names))

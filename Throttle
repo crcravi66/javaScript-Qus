@@ -1,0 +1,33 @@
+const throttle = (fn, delay = 300) => {
+  let isWating = false;
+  return (...args) => {
+    if(!isWating) {
+      fn.call(this, ...args)
+      isWating = true;
+      setTimeout(() => {
+        isWating = false;
+      }, delay)
+    }
+    
+  }
+}
+
+const saveInput = (firstName, lastName) => {
+  console.log('SaveInput', `${firstName} ${lastName}`)
+}
+
+const checkThrottle = throttle(saveInput, 2000)
+
+checkThrottle('kathir', '007')
+setTimeout(() => {
+  checkThrottle('kathir', '430')
+}, 500)
+setTimeout(() => {
+  checkThrottle('kathir', '430')
+}, 2200)
+setTimeout(() => {
+  checkThrottle('kathir', '320')
+}, 2500)
+setTimeout(() => {
+  checkThrottle('kathir', '001')
+}, 4100)

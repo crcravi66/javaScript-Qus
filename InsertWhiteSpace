@@ -1,0 +1,9 @@
+function insertWhiteSpace(str) {
+  if(!str.length) return ''
+  
+  return str.replace(/([a-z][A-Z])/g, ([lower, upper]) => `${lower} ${upper}`)
+}
+
+const str = 'HiMyNameIsKathir'
+
+console.log(insertWhiteSpace(str))

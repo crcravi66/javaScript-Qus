@@ -1,0 +1,217 @@
+// https://www.geeksforgeeks.org/javascript-output-based-interview-questions/
+
+
+// debugger;
+
+/* var variable = 10;
+
+(()=>{
+
+   variable_3 = 35;
+
+   console.log(variable_3);//??
+
+   var variable_3 = 45;
+
+   variable_2 = 15;
+
+   console.log(variable);   // ??
+
+})();
+ 
+console.log(variable_2);  //??
+
+console.log(variable_3);  //??
+
+var variable=30; */
+
+// debugger;
+
+/* var variable = 10;
+
+(function (){
+
+   variable_3 = 35;
+
+   console.log(variable_3);//??
+
+   var variable_3 = 45;
+
+   variable_2 = 15;
+
+   console.log(variable);   // ??
+
+})();
+ 
+console.log(variable_2);  //??
+
+console.log(variable_3);  //??
+
+var variable=30; */
+
+// debugger;
+
+/* var variable = 10;
+
+var variable_3 = 24;
+
+function test() {
+  // variable_3 = 35;
+  console.log(variable);//??
+
+  var variable = 13
+
+  console.log(variable_3);//??
+  let variable_3 = 45;
+  // console.log(variable_3);//??
+  variable_2 = 15;
+  console.log(variable);   // ??
+};
+
+test()
+
+
+console.log(variable_2);  //??
+console.log(variable);  //??
+var variable = 30;
+console.log(variable);  //??
+console.log(variable_3);  //?? */
+
+/* var x = 10;
+
+function example() {
+
+  console.log(x); // Output: ??
+
+  var x = 20;
+
+  console.log(x); // Output: ??
+
+}
+
+example(); */
+
+// debugger;
+
+/* let y = 10;
+
+function example2() {
+
+  console.log(window.y); // Output: ??
+
+  // let y = 20;
+
+  // console.log(y); // Output: ??
+
+}
+
+example2(); */
+
+/* console.log(message); // No error, but logs undefined
+var message = "Hoisted!";
+
+function sayHi() {
+  console.log('message:- ', message); // Logs "Hoisted!" (variable declaration is hoisted)
+  var message = 'Modified - 01'
+  console.log('message:- ', message); // Logs "Hoisted!" (variable declaration is hoisted)
+  // console.log('message2:- ', message2); // Logs "Hoisted!" (variable declaration is hoisted)
+  message = 'Modified - 1`'
+  let message2 = 'Modified - 2'
+
+  console.log('message2:- ', message2)
+}
+
+sayHi(); */
+
+/* let originalArray = [1,  2, 3];
+let copiedArray = originalArray.slice();
+copiedArray.push(4);
+originalArray.push(5);
+console.log(originalArray);
+console.log(copiedArray); */
+
+let originalObj = {
+  name: 'Test name',
+  age: 32,
+  test() {
+    console.log(this)
+  },
+  address: {
+    city: 'Bangalore',
+    country: 'India',
+    address2: {
+      city: 'Madurai',
+      country: 'India'
+    }
+  }
+};
+let copiedObj = { ...originalObj }
+let copiedObj2 = Object.assign({}, originalObj)
+let copiedObjStrigified = JSON.parse(JSON.stringify(originalObj))
+
+copiedObj.age = 34
+// copiedObj.address.city = 'New York'
+copiedObj2.address.city = 'New York'
+
+// console.log(originalObj)
+// console.log(copiedObj)
+// console.log(copiedObj2)
+
+// originalObj.test()
+copiedObjStrigified.test()
+
+let originalArray = [1, 2, 3, [{ name: 'kathir', age: 23 }]]
+let copiedArray = [...originalArray]
+let copiedArrayObjectAssign = Object.assign([], originalArray)
+let copiedArrayStringified = JSON.parse(JSON.stringify(originalArray))
+
+// copiedArray[3][0].name = 'kannan'
+// copiedArrayStringified[3][0].name = 'karthick'
+copiedArrayObjectAssign[3][0].name = 'karthick'
+
+
+/* console.log('originalArray', originalArray)
+console.log('copiedArray', copiedArray)
+console.log('copiedArrayStringified', copiedArrayStringified)
+console.log('copiedArrayObjectAssign', copiedArrayObjectAssign) */
+
+
+/* console.log(Number.isInteger(3.4)) */
+
+/* let testArr = [1,2]
+
+testArr[10] = 10
+
+console.log(testArr.length) // ???
+
+console.log(testArr[5]) // ??? */
+
+// debugger;
+
+/* var myObject  = {
+
+   color : "red",
+
+   test : function(){
+
+      function testThis(){
+
+        console.log(this.color); // 'red'
+
+        console.log(window === this); // false
+
+      };
+
+     testThis();
+
+     console.log(this.color); // undefined
+
+     console.log(window === this); // true
+
+     return "done!"
+
+   }
+
+};
+
+myObject.test(); */

@@ -1,0 +1,7 @@
+function getDuplicates(arr){
+  return arr.filter((val,index) => arr.indexOf(val) !== index)
+}
+
+var names = ["Kathir", "kannan", "kumaar","Kathir", "Karthi", "kannan"]
+
+console.log(getDuplicates(names))

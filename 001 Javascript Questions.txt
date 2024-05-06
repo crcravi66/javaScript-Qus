@@ -1,0 +1,129 @@
+Curated list of JavaScript Developer interview questions !! worth saving.
+=============================================
+Level-1: Basic
+1. Is Javascript single-threaded?
+2. Explain the main component of the JavaScript Engine and how it works.
+3. Explain the event loop in JavaScript and how it helps in asynchronous programming.
+4. Difference between var, let, and const ?
+5. Different data types in Javascript?
+6. What is callback function and callback hell ?
+7. What is Promise and Promise chaining?
+8. What is async/await ?
+9.What is the difference between == and === operators ?
+10. Different ways to create an Object in Javascript ?
+11. What is rest and spread operator?
+12. What is a higher-order function?
+
+Level-2 : Intermediate
+13. What is Closure? What are the use cases of Closures?
+14. Explain the concept of hoisting in JavaScript.
+15. What is a Temporal dead zone?
+16. What is a prototype chain? and Object.create() method?
+17. What is the difference between Call, Apply, and Bind methods?
+18. What are lambda or arrow functions?
+19. What is the currying function?
+20. What are the features of ES6?
+
+Level-3: Expert
+21. What is Execution context, execution stack, variable object, scope chain?
+22. What is the priority of execution of callback, promise, setTimeout, process.nextTick()?
+23. What is the Factory function and generator function?
+24. Different ways to clone (Shallow and deep copy of object) an object?
+25. How to make an object immutable? (seal and freeze methods)?
+26. What is Event and event flow, event bubbling and event capturing?
+27. What is Event delegation?
+28. What are server-sent events?
+29. What is a web worker or service worker in javascript?
+30. How to compare 2 JSON objects in javascript?
+=============================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======================  Ans   =============================
+Level-1: Basic
+1. Is Javascript single-threaded?
+   JavaScript is a single-threaded language, which means it has only one call stack that is used to execute the program. 
+
+2. Explain the main component of the JavaScript Engine and how it works.
+   JavaScript is a scripting language and is not directly understood by computer but the browsers have inbuilt JavaScript engine which help them to understand and interpret JavaScript codes. These engines help to convert our JavaScript program into computer-understandable language. 
+   A JavaScript engine is a computer program that executes JavaScript code and converts it into computer understandable language.
+
+3. Explain the event loop in JavaScript and how it helps in asynchronous programming.
+   JavaScript's event loop is the core mechanism that enables asynchronous operations. 
+   Though single-threaded, it manages tasks efficiently. 
+   Imagine it as a queue system: events like user interactions or network requests are added to the queue, and the engine processes them one by one.
+
+4. Difference between var, let, and const ?
+    Var
+    1. Function Scoped
+    2. Allows duplicate identifiers
+    3. Value can be updated
+    4. Hoisted and initialized with undefined.
+
+    Let
+    1. Block Scoped
+    2. Does NOT allow duplicate identifiers
+    3. Value can be updated
+    4. Hoisted BUT error if we try to access before declaration
+
+    Const
+    1. Block Scoped
+    2. Does NOT allow duplicate identifiers
+    3. Value cannot be updated
+    4. Hoisted BUT error if we try to access before declaration
+
+5. Different data types in Javascript?
+    JavaScript has eight fundamental data types: 
+        Number, String, Boolean, BigInt,
+        Null, Undefined, Symbol, and Object. 
+    The first seven are primitive data types, meaning their values can only contain one item (a string or a number), 
+    while objects can store data sets and more complex things.
+
+6. What is callback function and callback hell ?
+    callback function :
+        A callback function is a function passed as an argument to another function
+    callback hell:
+        Callback hell refers to deeply nested, difficult-to-read callback functions
+
+7. What is Promise and Promise chaining?
+    promise :
+        In JavaScript, promises are a programming construct that helps manage asynchronous operations
+        whether it succeeds or fails, and allow for more structured and readable code compared to using callbacks directly
+    Promise chaining :
+        A Promise is basically an object which represents the completion (or failure) of an asynchronous operation along with its result. 
+        A promise has 3 types of states and based upon these states, the promise executes the results.
+          *  Pending: This state represents either an initial state or fulfilled state or rejected state.
+          *  Fulfilled: This state represents that the asynchronous operation is successfully completed.
+          *  Rejected: This state represents that the asynchronous operation is rejected.
+
+8. What is async/await ?
+    Async/await is a feature in JavaScript that allows you to work with asynchronous code in a more synchronous-like manner, 
+    making it easier to write and understand asynchronous code. 
+    Async Functions always return a promise. 
+    Await Keyword is used only in Async Functions to wait for promise.
+
+9.What is the difference between == and === operators ?
+    The equality operator in javascript is used to compare if two values are equal. 
+    The comparison is made by == and === operators in javascript. 
+    The main difference between the == and === operator in javascript is that the == operator does the type conversion of the operands before comparison, 
+    whereas the === operator compares the values as well as the data types of the operands.
+
+10. Different ways to create an Object in Javascript ?
+    https://medium.com/@mandeepkaur1/creating-objects-in-javascript-a896e6cfa6eb
+  
+11. What is rest and spread operator?
+    https://www.geeksforgeeks.org/spread-vs-rest-operator-in-javascript-es6/
+
+12. What is a higher-order function?
+    https://www.freecodecamp.org/news/higher-order-functions-in-javascript-explained/#:~:text=A%20higher%20order%20function%20is%20a%20function%20that%20takes%20one,functions%20like%20map%20and%20reduce.

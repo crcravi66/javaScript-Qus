@@ -1,0 +1,154 @@
+// write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character. Make sure the 
+// pyramid has spaces on the left & right hand sides!
+
+// --- Examples
+// pyramid(2)
+// ' # '
+// '###'
+
+// pyramid(3)
+// '  #  '
+// ' ### '
+// '#####'
+
+function pyramid(n) {
+  const midPoint = Math.floor((2*n - 1) / 2)
+  
+  for (let row = 0; row < n; row++) {
+    let level = ''
+    
+    for(let column = 0; column < (2*n - 1); column++) {
+      if(midPoint - row <= column && midPoint + row >= column) {
+        level += '#'
+      } else {
+        level += ' '
+      }
+    }
+    console.log(level)
+  }
+  
+    // for (let row = 1; row <= n; row++) {
+    //   let output = "";
+    //   // Add spaces before asterisks
+    //   for (let j = 0; j < n - row; j++) {
+    //     output += " ";
+    //   }
+    //   // Add asterisks for the current row
+    //   for (let k = 0; k < 2 * row - 1; k++) {
+    //     output += "#";
+    //   }
+    //   console.log(output);
+    // }
+}
+
+function pyramid2(n, row = 0, level = '') { // recursive solution
+  
+  if(row === n) {
+    return
+  }
+  
+  if(level.length === 2*n - 1) {
+    console.log(level)
+    return pyramid2(n, row + 1)
+  }
+  
+  const midPoint = Math.floor((2*n - 1) / 2)
+  
+  if(midPoint - row <= level.length && midPoint + row >= level.length) {
+    level += 'O'
+  } else {
+    level += ' '
+  }
+  
+  pyramid2(n, row, level)
+}
+
+function pyramid3(n) {
+  for (let i = n; i > 0; i--) {
+    let output = "";
+    // Add spaces before asterisks
+    for (let j = 0; j < n - i; j++) {
+      output += " ";
+    }
+    // Add asterisks for the current row
+    for (let k = 0; k < 2 * i - 1; k++) {
+      output += "O";
+    }
+    console.log(output);
+  }
+
+// const midPoint = Math.floor((2*n - 1) / 2)
+  
+//   for (let row = n-1; row >= 0; row--) {
+//     let level = ''
+    
+//     for(let column = 0; column < (2*n - 1); column++) {
+//       if(midPoint - row <= column && midPoint + row >= column) {
+//         level += '#'
+//       } else {
+//         level += ' '
+//       }
+//     }
+//     console.log(level)
+//   } 
+}
+
+function pyramid4(n, row = 0, level = '') { // recursive solution
+  
+  if(row === n) {
+    return
+  }
+  
+  if(level.length === 2*n - 1) {
+    console.log(level)
+    return pyramid2(n, row + 1)
+  }
+  
+  const midPoint = Math.floor((2*n - 1) / 2)
+  
+  if(midPoint - row <= level.length && midPoint + row >= level.length) {
+    level += 'O'
+  } else {
+    level += ' '
+  }
+  
+  pyramid2(n, row, level)
+}
+
+function printPyramidRepeat(rows) {
+  for (let i = 1; i <= rows; i++) {
+    const spaces = " ".repeat(rows - i);
+    const asterisks = "|".repeat(2 * i - 1);
+    console.log(spaces + asterisks);
+  }
+}
+
+function printReversedPyramidRepeat(rows) {
+  for (let i = rows; i > 0; i--) {
+    const spaces = " ".repeat(rows - i);
+    const asterisks = "O".repeat(2 * i - 1);
+    console.log(spaces + asterisks);
+  }
+}
+
+// Example usage
+// const pyramidHeight = 5;
+// console.time('1')
+// printPyramidRepeat(pyramidHeight);
+// console.timeEnd('1')
+// console.time('2')
+// printReversedPyramidRepeat(pyramidHeight);
+// console.timeEnd('2')
+
+console.time('3')
+pyramid(4)
+console.timeEnd('3')
+// pyramid2(4)
+// console.time('4')
+// pyramid3(4)
+// console.timeEnd('4')
+// pyramid2(4)
+
+

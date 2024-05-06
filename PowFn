@@ -1,0 +1,35 @@
+function pow(num, e) {
+  let exponent;
+  let value = num;
+  addup();
+
+  function addup(outernum = num, iterate = 1) {
+    if (iterate == e) {
+      return;
+    }
+    for (let counter = 1; counter < num; counter++) {
+      value += outernum;
+    }
+    exponent = value;
+    return addup(value, iterate + 1);
+  }
+  return exponent;
+}
+
+function power(base, exponent) {
+  if (exponent <= 0) {
+    return 1;
+  } else {
+    let result = base;
+    for (let i = 1; i < exponent; i++) {
+      result *= base;
+    }
+    return result;
+  }
+}
+
+console.log(pow(2,8))
+console.log(power(2,8))
+console.log(power(2,0))
+
+

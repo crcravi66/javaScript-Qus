@@ -1,0 +1,19 @@
+function reverseNumber(num) {
+  if(!Number.isInteger(num)) {
+    console.log('Please provide integer number')
+    return;
+  }
+  let rem = 0,
+    rev = 0;
+  
+  while(num != 0) {
+    rem = num % 10;
+    rev = (rev * 10) + rem;
+    
+    num = parseInt(num / 10)
+  }
+  return rev 
+}
+
+console.log(reverseNumber(12345))
+console.log(reverseNumber(-1245))

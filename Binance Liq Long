@@ -1,0 +1,4 @@
+function calcLongLiq(entryPrice, leverage) {
+  let liqPrice = ((entryPrice*leverage) / ((leverage + 1) - ((leverage/(100*100)) * leverage)))
+  return liqPrice;
+}

@@ -1,0 +1,26 @@
+var firstWord = "Mary";
+var secondWord = "Army";
+
+console.log(isAnagram(firstWord, secondWord)) // true
+console.log(isAnagram2(firstWord, secondWord)) // true
+console.log(isAnagram('rail safety', 'Fairy! "tales"')) // false
+console.log(isAnagram2('rail safety', 'Fairy! "tales"')) // true
+
+function clearString(str) {
+  return str.replace(/[\W_]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort().join('')
+}
+
+function isAnagram(first, second) { // accept single word
+  if (first.length !== second.length) {
+    return false;
+  }
+  
+  return clearString(first) === clearString(second);
+}
+function isAnagram2(first, second) { // accepts multiple words by omitting non characters
+
+  return clearString(first) === clearString(second);
+}

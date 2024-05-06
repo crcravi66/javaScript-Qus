@@ -1,0 +1,10 @@
+function printNumbers(start, end){
+  setTimeout(function(){
+    console.log(start)
+    if(start < end) {
+      printNumbers((start + 1), end)
+    }
+    },1000)
+}
+
+printNumbers(1, 10)

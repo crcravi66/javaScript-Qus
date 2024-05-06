@@ -1,0 +1,7 @@
+// Function to create array for the given Range
+
+function range(start, end) {
+  return [...Array(end - (start - 1)).keys()].map(el => el + start) 
+}
+
+console.log(range(0,20))

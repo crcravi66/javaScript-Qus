@@ -1,0 +1,22 @@
+function keyValuePrinter(obj) {
+  for(let key in obj) {
+    if(typeof obj[key] !== 'object') {
+      console.log(`[${key}: ${obj[key]}]`)
+    } else {
+      keyValuePrinter(obj[key])
+    }
+  }
+}
+
+const testObj = {
+  name: 'kathir',
+  age: 37,
+  address: {
+    street: '1st main',
+    city: 'Bangalore',
+    state: 'Karnataka'
+  },
+  mobile: '8553340791'
+}
+
+keyValuePrinter(testObj)

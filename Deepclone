@@ -1,0 +1,37 @@
+function deepClone(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj
+  }
+
+  const newObj = Array.isArray(obj) ? [] : {}
+
+  for (const key in obj) {
+    newObj[key] = deepClone(obj[key])
+  }
+
+  return newObj;
+
+}
+
+const obj1 = {
+  name: 'arun',
+  data: {
+    id: 1,
+    numbers: [1, 2, 3, 4]
+  },
+  test() {
+    console.log(this)
+  }
+}
+
+const obj2 = deepClone(obj1)
+
+obj1.data.id = 2
+
+obj2.data.numbers.push(5)
+
+// console.log('obj1', obj1)
+// console.log('obj2', obj2)
+
+// obj1.test()
+obj2.test()

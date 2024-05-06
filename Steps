@@ -1,0 +1,71 @@
+// write a function that accepts a positive number N.
+// The function should console log a step shape
+// with N levels using the # character. Make sure the 
+// step has spaces on the right hand side!
+
+// --- Examples
+// steps(2)
+// '# '
+// '##'
+
+// steps(4)
+// '#   '
+// '##  '
+// '### '
+// '####'
+
+function steps(n) {
+  
+  for(let row = 0; row < n; row++) {
+    let stair = ''
+    for(let column=0; column < n; column++) {
+      if(column <= row) {
+        stair += '#'
+      } else {
+        stair += ' '
+      }
+    }
+    console.log(stair)
+  }
+}
+
+function steps2(n, row = 0, stair = '') { // recursive solution
+  if(n === row) {
+    return;
+  }
+  
+  if((stair.length === n)) {
+    console.log(stair)
+    return steps2(n, row + 1)
+  }
+  
+  stair += stair.length <= row ? '#' : ' '
+  
+  steps(n, row, stair)
+}
+
+function steps3(n) {
+  
+  for(let row = 0; row < n; row++) {
+    let stair = ''
+    for(let column=0; column <= row; column++) {
+      stair += '#'
+    }
+    console.log(stair)
+  }
+}
+
+function printStepsRepeat(rows) {
+  for (let i = 0; i < rows; i++) {
+    const steps = "#".repeat(i + 1);
+    // const asterisks = "O".repeat(2 * i - 1);
+    console.log(steps);
+  }
+}
+
+// steps(4)
+// steps2(4)
+steps3(4)
+// printStepsRepeat(4)
+
+

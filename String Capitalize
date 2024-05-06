@@ -1,0 +1,50 @@
+// capitalize('hi there') --> Hi There
+// capitalize('hI tHEre') --> Hi There
+// capitalize('HI ThERE') --> Hi There
+// capitalize('look, IT\'s wOrking') --> Look, It's Working
+
+function capitalize(str) { // faster than the second one
+  if(typeof str !== 'string' || !str.length) return ''
+  
+  const lowerCasedWords = str.toLowerCase().split(' ')
+  capitalizedWords = []
+  
+  for(let word of lowerCasedWords) {
+    capitalizedWords.push(word[0].toUpperCase() + word.slice(1))
+  }
+  
+  return capitalizedWords.join(' ')
+}
+
+function capitalize2(str) { // slower than the first one
+  if(typeof str !== 'string' || !str.length) return ''
+  
+  const lowerCasedStr = str.toLowerCase()
+  capitalizedWords = lowerCasedStr[0].toUpperCase()
+  
+  for(let i=1; i< lowerCasedStr.length; i++) {
+    if(lowerCasedStr[i-1] === ' ') {
+      capitalizedWords += lowerCasedStr[i].toUpperCase()
+    } else {
+      capitalizedWords += lowerCasedStr[i]
+    }
+  }
+  
+  return capitalizedWords;
+}
+
+console.time('capitalize')
+console.log(capitalize('hi there..!'))
+console.log(capitalize('HI ThERE..!'))
+console.log(capitalize('hI therE..!'))
+console.log(capitalize('look, IT\'s wOrking'))
+console.timeEnd('capitalize')
+
+console.time('capitalize-2')
+console.log(capitalize2('hi there..!'))
+console.log(capitalize2('HI ThERE..!'))
+console.log(capitalize2('hI therE..!'))
+console.log(capitalize2('look, IT\'s wOrking'))
+console.timeEnd('capitalize-2')
+
+

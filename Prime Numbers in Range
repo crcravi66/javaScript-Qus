@@ -1,0 +1,19 @@
+function isPrime(num) {
+  
+  for(let i = 2; i < num; i++) {
+    if(num % i === 0) return false
+  }
+  
+  return num > 1
+}
+
+function primeInRange(start, end) {
+  const primeNumbers = []
+  for(let num = start; num <= end; num++) {
+    if(isPrime(num)) primeNumbers.push(num)
+  }
+  // return false
+  return primeNumbers
+}
+
+console.log(primeInRange(10,25))

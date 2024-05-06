@@ -1,0 +1,33 @@
+function calculator() {
+    let value = 0;
+    
+    const returnValues = { plus, minus, divide, multiply, get: getValue }
+    
+    function plus(num) {
+        value += num;
+        return returnValues;
+    }
+    function minus(num) {
+        value -= num;
+        return returnValues;
+    }
+    function divide(num) {
+        if(num === 0) {
+            throw new Error('Division by zero')
+        }
+        value /= num;
+        return returnValues;
+    }
+    function multiply(num) {
+        value *= num;
+        return returnValues;
+    }
+    function getValue() {
+        return value
+    }
+    
+    return returnValues;
+}
+
+let calc = calculator(); 
+console.log(calc.plus(2).minus(1).plus(19).divide(2).multiply(3).get())

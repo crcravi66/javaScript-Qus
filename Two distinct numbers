@@ -1,0 +1,10 @@
+// In a given input array number repeats atleast once, except for two element. write a function that returns that uniques two numbers
+
+function twoUniqueNummbers(arr) {
+  return arr.filter((el) => arr.indexOf(el) === arr.lastIndexOf(el))
+}
+
+const arr = [1,9,8,8,7,6,1,6]
+
+
+console.log(twoUniqueNummbers(arr))

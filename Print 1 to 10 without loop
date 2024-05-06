@@ -1,0 +1,8 @@
+function printNumbers(start, end){
+  console.log(start)
+  if(start < end) {
+    printNumbers((start + 1), end)
+  }
+}
+
+printNumbers(1, 10)

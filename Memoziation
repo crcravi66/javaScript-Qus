@@ -1,0 +1,20 @@
+function memoize() {
+  const cache = {}
+  
+  return (value) => {
+    if(value in cache) {
+      console.log('fetching from cache')
+      return cache[value]
+    } else {
+      console.log('calculating value...')
+      const result = value + 10
+      cache[value] = result
+      return result
+    }
+  }
+} 
+
+const newAdd = memoize()
+
+console.log(newAdd(4))
+console.log(newAdd(4))
